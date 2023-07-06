@@ -5,14 +5,9 @@ CURRENT_DATE := $(shell powershell -Command "Get-Date -Format 'yyyy-MM-dd'")
 JDBC_URL := "jdbc:postgresql://${POSTGRES_HOST}/${POSTGRES_DB}"
 JDBC_PROPERTIES := '{"user": "${POSTGRES_ACCOUNT}", "password": "${POSTGRES_PASSWORD}"}'
 
-help:
-	@echo ## postgres			- Run a Postgres container, including its inter-container network.
+all: postgres airflow 
 
-all: postgres airflow selenium copy_credential
-
-postgres: postgres-create
-
-postgres-create:
+postgres:
 	@docker-compose -f ./docker/docker-compose.yaml --env-file .env up -d
 	@echo '__________________________________________________________'
 	@echo 'Postgres container created at port ${POSTGRES_PORT}...'
@@ -23,12 +18,10 @@ postgres-create:
 		echo 'Postgres Db             : ${POSTGRES_DB}'
 	@echo '==========================================================='
 
-airflow: airflow-create
-
-airflow-create:
+airflow :
 	@docker-compose -f ./docker/docker-compose.yaml --env-file .env up -d
 	
-selenium :
+packages :
 	@docker exec -it airflow_scheduler_tgs bash -c "pip install selenium"
 	@docker exec -it airflow_scheduler_tgs bash -c "pip install bs4"
 	@docker exec -it airflow_scheduler_tgs bash -c "pip install lxml"

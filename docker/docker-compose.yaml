@@ -1,4 +1,4 @@
-    version: '3.8'
+version: '3.8'
 services:
     postgres:
         container_name: ${POSTGRES_CONTAINER_NAME}
