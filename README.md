@@ -23,7 +23,13 @@ The result of those is presented in Looker Studio Dashboard
    - then type 'make copy_credential' to copy your google spreadsheet credential inside container direcotry
 4. if all setp is done, you can add all dag file and py file based on this tree
    ![image](https://github.com/arifalse/final_assignment/assets/61183492/df989775-511e-4cf4-a878-a705320f3999)
+5. the scraping, sentiment, and offloading is run in airflow webserver :
 
+   ![image](https://github.com/arifalse/final_assignment/assets/61183492/df499704-1d8e-41c8-8791-c0f987acdfca)
+
+7. Tips if any error happen :
+   -if theres an error at 'selenium version' after all container composed, restart the container will fix it
+   
 # Final result
 - Dashboard in Looker Studio
 - Link https://lookerstudio.google.com/reporting/26f41445-6e7c-4738-b4a3-70a3b10cff46
