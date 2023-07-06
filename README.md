@@ -14,7 +14,9 @@ The result of those is presented in Looker Studio Dashboard
 # How to run
 1. make sure docker is already installed
 2. its more comfortable if your dir tree sama as this :
+
 ![image](https://github.com/arifalse/final_assignment/assets/61183492/db539535-37fe-45e0-bcb3-9fec0c66a2e5)
+
 3. if all file is already set, you can run this command to build container in docker :
    - 'make all' its command using makefile to build postgres airflow and selenium
    - if all three container is already running, you can type 'make packages' to install all required pacakge
