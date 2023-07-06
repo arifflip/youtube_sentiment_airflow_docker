@@ -7,13 +7,13 @@ The result of those is presented in Looker Studio Dashboard
 
 # Requirements
 - Docker (to build required application)
-- Credential googlesheet (to write data to googlesheet using python api) 
+- Credential googlesheet (an json filte which contain credential to write data to googlesheet using python api) 
 - Docker_compose.yaml file (contains all applications configuration)
 - Makefile (a makefile to ease building all required apps and its config to docker) 
 
 # How to run
 1. make sure docker is already installed
-2. its more comfortable if your dir tree sama as this :
+2. its more comfortable if your dir tree is same as this :
 
 ![image](https://github.com/arifalse/final_assignment/assets/61183492/db539535-37fe-45e0-bcb3-9fec0c66a2e5)
 
@@ -21,14 +21,14 @@ The result of those is presented in Looker Studio Dashboard
    - 'make all' its command using makefile to build postgres airflow and selenium
    - if all three container is already running, you can type 'make packages' to install all required pacakge
    - then type 'make copy_credential' to copy your google spreadsheet credential inside container direcotry
-4. if all setp is done, you can add all dag file and py file based on this tree
+4. if all step is done, you can add all dag file and py file based on this tree
    ![image](https://github.com/arifalse/final_assignment/assets/61183492/df989775-511e-4cf4-a878-a705320f3999)
-5. the scraping, sentiment, and offloading is run in airflow webserver :
+5. dependencies of scraping, sentiment, and offloading dags can be seen in airflow webserver :
 
    ![image](https://github.com/arifalse/final_assignment/assets/61183492/df499704-1d8e-41c8-8791-c0f987acdfca)
 
 7. Tips if any error happen :
-   -if theres an error at 'selenium version' after all container composed, restart the container will fix it
+   -if theres an error at 'selenium' after all containers succesfully builded, restart the container will fix it
    
 # Final result
 - Dashboard in Looker Studio
