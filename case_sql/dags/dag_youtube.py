@@ -87,7 +87,7 @@ def offload() :
 
 ###dag tasks
 with DAG(dag_id="youtube_scraper_and_sentiment",
-         catchup=False,default_args=default_args) as dag:
+         catchup=False,default_args=args) as dag:
                 
         #task to scrape 
         task1 = PythonOperator(
