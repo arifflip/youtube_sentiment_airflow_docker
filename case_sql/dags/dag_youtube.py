@@ -33,7 +33,7 @@ args = {
 #  Task
 #|----------------------------------------------------------------------------------| 
 
-#task to config driver and define youtube scraper object
+#funtion to config driver and define youtube scraper object
 def scrape() :  
 
     #create scrapper object
@@ -41,7 +41,7 @@ def scrape() :
     result=scrapper.run_scrapper()
     return result
 
-#task to do scraping and write it to postgre
+#funtion to do scraping and write it to postgre
 def scrape_and_load() :
      
     #run scrapper
@@ -51,7 +51,7 @@ def scrape_and_load() :
     table_name = 'scraping_raw_result'
     write_to_postgre(df_result,table_name)
 
-#tasl to read from postgre then do sentiment and write it again to postgre
+#funtion to read from postgre then do sentiment and write it again to postgre
 def read_do_sentiment_load() :
 
     print('---------- SCORING FOR SENTIMENT ANALYSIS IS STARTING ----------')
@@ -71,7 +71,7 @@ def read_do_sentiment_load() :
     table_name = 'sentiment_youtube_trending_video'
     write_to_postgre(df,table_name)
 
-#tasl to read from postgre then do sentiment and write it again to postgre
+#funtion to read from postgre then do sentiment and write it again to postgre
 def offload() :
     
     #read from tabel
@@ -86,21 +86,21 @@ def offload() :
 #|----------------------------------------------------------------------------------|
 
 ###dag tasks
-with DAG(dag_id="test_scraper_youtube",
+with DAG(dag_id="youtube_scraper_and_sentiment",
          start_date=datetime(2023,7,3),
          catchup=False) as dag:
                 
-        #task to
+        #task to scrape 
         task1 = PythonOperator(
         task_id="Scrape",
         python_callable=scrape_and_load)
 
-        #task to  
+        #task to do sentiment
         task2 = PythonOperator(
         task_id="Sentiment",
         python_callable=read_do_sentiment_load)
 
-        #task to  
+        #task to offload
         task3 = PythonOperator(
         task_id="Offload",
         python_callable=offload)
