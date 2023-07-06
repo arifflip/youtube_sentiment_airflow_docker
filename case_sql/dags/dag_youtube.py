@@ -24,7 +24,7 @@ from function_tools import *
 ### config for running daily and start at 9 july 2023
 args = {
     'owner': 'arif',
-    'start_date': datetime(2023,7,9),
+    'start_date': datetime(2023,7,6),
     'depends_on_past': False,
     'schedule_interval': '@daily',
 }
