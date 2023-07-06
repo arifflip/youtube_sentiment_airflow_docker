@@ -23,10 +23,12 @@ from function_tools import *
 #  arg
 #|----------------------------------------------------------------------------------| 
 
-### defaulr args
+### config for running daily and start at 9 july 2023
 args = {
     'owner': 'arif',
+    'start_date': datetime(2023,7,9),
     'depends_on_past': False,
+    'schedule_interval': '@daily',
 }
 
 #|----------------------------------------------------------------------------------|  
@@ -87,8 +89,7 @@ def offload() :
 
 ###dag tasks
 with DAG(dag_id="youtube_scraper_and_sentiment",
-         start_date=datetime(2023,7,3),
-         catchup=False) as dag:
+         catchup=False,default_args=default_args) as dag:
                 
         #task to scrape 
         task1 = PythonOperator(
