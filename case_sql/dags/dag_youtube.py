@@ -5,8 +5,6 @@
 from lib2to3.pgen2 import driver
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.operators.mysql_operator import MySqlOperator
-from airflow.providers.mysql.hooks.mysql import MySqlHook
 
 from datetime import datetime
 import pandas as pd
