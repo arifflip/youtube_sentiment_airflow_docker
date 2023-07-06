@@ -34,6 +34,6 @@ The result of those is presented in Looker Studio Dashboard
 - Dashboard in Looker Studio
 - Link https://lookerstudio.google.com/reporting/26f41445-6e7c-4738-b4a3-70a3b10cff46
 - Example of dashboard :
-- ![image](https://github.com/arifalse/final_assignment/assets/61183492/910a6a57-c6ad-4879-a62c-793d508b4b5e)
+- ![image](https://github.com/arifalse/final_assignment/assets/61183492/8fefd509-f033-4a2f-a9a6-039818667741)
 
 
