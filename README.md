@@ -28,6 +28,7 @@ The result of those is presented in Looker Studio Dashboard
    ![image](https://github.com/arifalse/final_assignment/assets/61183492/df499704-1d8e-41c8-8791-c0f987acdfca)
 
 7. Tips if any error happen :
+   -if there is an error in makefile that says 'no file such google sheet credential', its mean you put credential in wrong directory or you dont have it  
    -if theres an error at 'selenium' after all containers succesfully builded, restart the container will fix it
    
 # Final result
