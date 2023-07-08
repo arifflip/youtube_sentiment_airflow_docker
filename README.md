@@ -7,7 +7,7 @@ The result of those is presented in Looker Studio Dashboard
 
 # Requirements
 - Docker (to build required application)
-- Credential googlesheet (an json filte which contain credential to write data to googlesheet using python api) 
+- Credential googlesheet  (MUST HAVE | a json file which contain credential to write data to googlesheet using python api) 
 - Docker_compose.yaml file (contains all applications configuration)
 - Makefile (a makefile to ease building all required apps and its config to docker) 
 
